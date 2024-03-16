@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+.background{
+    background-color: #0D1F23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.conteiner1{
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2D4A53;
+    width: 400px;
+    height: 500px;
+    border-radius: 25px;
+    box-shadow:  35px 35px 70px #0000002d,
+                -35px -35px 70px #ffffff10;
+}
+.conteiner1 label{
+    padding-top: 25px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.value{
+    width: 300px;
+    height: 40px;
+
+    font-family: inherit;
+    font-weight: 500;
+    padding: 13px;
+    margin-top: 5px;
+
+    color: white;
+    background-color: #69818D;
+    cursor: default;
+    border: none;
+    border-radius: 7px;
+}
+.value:focus{
+    outline: none;
+}
+.value::placeholder{
+    color: white;
+}
+.value::-webkit-inner-spin-button { 
+    -webkit-appearance: none;  
+}
+.button{
+    font: inherit;
+    font-weight: 600;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-top: 27px;
+    border-radius: 50px;
+    background-color: white;
+}
+.button:active{
+    background-color: #dddddd;
+}
+
+.conteiner2{
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #69818D;
+    width: 300px;
+    height: 170px;
+    box-shadow:  20px 20px 55px #0000002d,
+                -20px -20px 55px #ffffff10;
+    padding: 20px;
+}
+#res{
+    color: white;
+    font-size: 15px;
+}

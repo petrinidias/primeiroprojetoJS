@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Taxa</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="conteiner1">
+            <label>Informe o valor da sua dívida:</label>
+            <input class="value" id="divida" type="number">
+            <label>Informe o número de dias decorridos <br>desde o vencimento do boleto:</label>
+            <input class="value" id="dias" type="number">
+            <button class="button" onclick="calcular()">Calcular</button>
+            
+            <div class="conteiner2">
+                <div id="res">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function calcular() {
+
+            let valor_divida = parseFloat(document.querySelector('input#divida').value)
+            let numero_dias = parseFloat(document.querySelector('input#dias').value)
+            var cinco = (valor_divida * 1.05).toFixed(2);
+            var dez = (valor_divida * 1.1).toFixed(2);
+            var res = document.querySelector('div#res')
+
+            if (valor_divida === 0){
+                res.innerHTML = 'Você não tem dívida.'
+            } else {
+
+            if (numero_dias === 0) {
+                res.innerHTML = 'Você não tem dívida.'
+            } else if (numero_dias <= 15) {
+                res.innerHTML = 'O valor original era <strong>R$' + valor_divida.toFixed(2) + '</strong>.<br><br>' + ' Agora, sua dívida é de <strong>R$' + cinco+ '</strong>, pois você atrasou ' + numero_dias + ' dias, aplicando uma taxa de <strong>5%</strong> de juros.'
+            } else if (numero_dias > 15) {
+                res.innerHTML = 'O valor original era <strong>R$' + valor_divida.toFixed(2) + '</strong>.<br><br>' + ' Agora, sua dívida é de <strong>R$' + dez + '</strong>, pois você atrasou ' + numero_dias + ' dias, aplicando uma taxa de <strong>10%</strong> de juros.'
+            } else {
+                res.innerHTML = 'Digite corretamente!'
+            }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
